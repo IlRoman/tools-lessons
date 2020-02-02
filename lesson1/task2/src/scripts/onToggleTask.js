@@ -1,4 +1,3 @@
-// import { tasksList } from './onStorageChange.js';
 import { renderListItems } from './renderListItems.js';
 import { updateNewTask, getTasksList } from './tasksGetWay.js';
 
