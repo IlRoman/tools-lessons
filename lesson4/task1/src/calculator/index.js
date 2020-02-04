@@ -1,12 +1,10 @@
 // экспортируйте sum и mult как именной export
-export { sum, mult };
-
-const sum = (a, b) => {
+export const sum = (a, b) => {
     console.log('implementation for sum');
     // ... implementation
 };
 
-const mult = (a, b) => {
+export const mult = (a, b) => {
     console.log('implementation for mult');
     // ... implementation
 };
