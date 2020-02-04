@@ -1,29 +1,29 @@
-import { arrayOfDates } from './navigation.js'
-export const visual = document.querySelector('.calendar-visualization');
+import "core-js/modules/es.array.concat";
+import "core-js/modules/es.regexp.exec";
+import "core-js/modules/es.string.split";
+import { arrayOfDates } from './navigation.js';
+export var visual = document.querySelector('.calendar-visualization');
+export var calendarRendering = function calendarRendering() {
+  visual.innerHTML = '';
 
-export const calendarRendering = () => {
+  for (var i = 1; i <= 24; i++) {
+    var day = document.createElement('div');
+    day.setAttribute('data-time', "".concat(i < 10 ? 0 : '').concat(i, ":00"));
+    day.classList.add('emptyRow');
+    visual.append(day);
 
-    visual.innerHTML = '';
-
-    for (let i = 1; i <= 24; i++) {
-        const day = document.createElement('div');
-        day.setAttribute('data-time', `${i < 10 ? 0 : ''}${i}:00`);
-        day.classList.add('emptyRow');
-        visual.append(day);
-
-        for (let j = 1; j <= 7; j++) {
-            const hour = document.createElement('div');
-            let date = arrayOfDates[j - 1] + '';
-            let dayNameofSlot = date.split(' ')[0];
-            let dateOfSlot = date.split(' ')[2];
-            hour.setAttribute('data-day', `${dayNameofSlot}`);
-            hour.setAttribute('data-date', `${dateOfSlot}`);
-            hour.setAttribute('data-number', `${j - 1}`);
-            hour.classList.add('emptyCell');
-            day.append(hour);
-        }
+    for (var j = 1; j <= 7; j++) {
+      var hour = document.createElement('div');
+      var date = arrayOfDates[j - 1] + '';
+      var dayNameofSlot = date.split(' ')[0];
+      var dateOfSlot = date.split(' ')[2];
+      hour.setAttribute('data-day', "".concat(dayNameofSlot));
+      hour.setAttribute('data-date', "".concat(dateOfSlot));
+      hour.setAttribute('data-number', "".concat(j - 1));
+      hour.classList.add('emptyCell');
+      day.append(hour);
     }
-    // localStorage.clear();
-}
+  } // localStorage.clear();
 
+};
 calendarRendering();
