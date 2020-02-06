@@ -1,0 +1,10 @@
+import "core-js";
+import { calendarRendering } from './scripts/calendar-visualization.js';
+import { createDates, renderDates, showCurrentMonthAndYear, renderNextWeek, renderPreviousWeek, today_button_function } from './scripts/navigation.js';
+import { generateNumbersRange, getTimesBlocks, } from './scripts/utils.js';
+import { addButton } from './scripts/popup.js';
+import { redLine } from './scripts/red-line.js';
+import { saveEvent } from './scripts/save-event.js';
+import { activeEventOnclick } from './scripts/edit-event.js';
+import { deleteButtonOnclick } from './scripts/delete-event.js';
+import './index.scss';
